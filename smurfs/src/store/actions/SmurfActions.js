@@ -15,10 +15,14 @@ export const getSmurfs = () => (dispatch) => {
 }
 
 export const addSmurf = (smurf) => (dispatch) => {
+    console.log(smurf)
     dispatch({ type: SMURF_LOADING })
     axios.post('http://localhost:3333/smurfs', smurf)
     .then(res => {
         dispatch({ type: ADD_SMURF, payload: res.data })
     })
-    .catch(err => dispatch({ type: SMURF_FAIL, payload: err.message }))
+    .catch(err => {
+        console.dir(err)
+        dispatch({ type: SMURF_FAIL, payload: err.message })
+    })
 }

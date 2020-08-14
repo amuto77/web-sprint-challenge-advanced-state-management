@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { addSmurf } from '../store/actions/SmurfActions'
 
 function Form(props) {
     const [smurf, setSmurf] = useState({
         name: '',
         age: '',
-        height: ''
+        height: '',
+        id: Math.random()
     })
 
     const handleChange = (e) => {
@@ -30,4 +32,4 @@ function Form(props) {
     )
 }
 
-export default connect(null, {})(Form)
+export default connect(null, {addSmurf})(Form)

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { getSmurfs } from '../actions/SmurfActions'
+import { getSmurfs } from '../store/actions/SmurfActions'
 import SmurfContainer from './SmurfContainer'
 import Form from './Form'
 import "./App.css";
